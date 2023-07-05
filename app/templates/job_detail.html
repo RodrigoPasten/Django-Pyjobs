@@ -1,0 +1,30 @@
+ {% load humanize %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del trabajo</title>
+</head>
+
+<body>
+
+<a href="{% url 'jobs_home' %}">
+  <h4>Home</h4>
+</a>
+<h2>{{ job.title }}</h2>
+<h3>{{  job.description }}</h3>
+
+<p> Salario: ${{  job.salary |floatformat }} </p>
+<p> Fecha publicación: {{job.date}}</p>
+<p> Expira: {{job.expiry}}</p>
+
+{% if job.location %}
+    <p> Ubicación: {{job.location}}</p>
+{% else %}
+    <p> Ubicación: No informada</p>
+{% endif %}
+
+<p>Publicado por: {{ job.author }}</p>
+
+</body>
+</html>

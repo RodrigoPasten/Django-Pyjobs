@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyJobs</title>
+</head>
+<body>
+
+
+{% for job in jobs %}
+<ul>
+  <li><a href="{% url 'job_detail' job.slug%}" >{{job}}</a>  </li>
+</ul>
+{% endfor %}
+</body>
+</html>
