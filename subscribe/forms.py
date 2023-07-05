@@ -1,19 +1,16 @@
 from django import forms
+from subscribe.models import Subscribe
+from django.utils.translation import gettext_lazy as _
 
 
-def validate_comma(value):
-    if "," in value:
-        raise forms.ValidationError('El nombre no puede tener coma')
-    return value
+class SubscribeForm(forms.ModelForm):
+    class Meta:
+        model = Subscribe
+        fields = "__all__"
+        labels = {
+            'first_name': _('Ingrese su nombre'),
+            'last_name': _('Su apellido aqui'),
+            'email': _('Acá, su email')
+        }
 
 
-class SubscribeForm(forms.Form):
-    first_name = forms.CharField(max_length=100, label='Nombre', validators=[validate_comma])
-    last_name = forms.CharField(max_length=100)
-    email = forms.EmailField(
-        max_length=100,
-        error_messages={
-            'required': 'Por favor ingresa tu correo electrónico',
-            'invalid': 'El correo proporcionado no es válido',
-        },
-        required=True)
