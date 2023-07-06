@@ -4,12 +4,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'subscribe/main.css' %}">
     <title>Form</title>
 
 </head>
 <body>
-<h1>Formulario de Registro</h1>
+<h1><img src="{% static 'subscribe/logo-mail.png' %}" alt="mail" width="30" height="25">Formulario de Registro</h1>
 <form method="post">
     {% csrf_token %}
    <div class = "subcsribe_fields">
@@ -40,12 +40,6 @@
   <input type="submit" value="submit">
 </form>
 <button onclick="popup()">Click me</button>
-
-<script>
-    function popup(){
-        alert("Hola, ratón con cola");
-    }
-
-</script>
+<script src="{% static 'subscribe/main.js' %}"></script>
 </body>
 </html>
