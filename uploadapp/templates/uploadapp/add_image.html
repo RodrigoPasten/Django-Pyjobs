@@ -6,6 +6,19 @@
 </head>
 <body>
 <h1>Pagina de imagenes</h1>
+
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
     {{form.as_p}}
+    <button type="submit" >Upload</button>
+
+</form>
+
+{% if saved_object %}
+<h2> Se guardó tu imagen en : {{saved_object.image.url}}</h2>
+<h3>Descipción de la imagen: {{saved_object.description}}</h3>
+<img src="{{saved_object.image.url}}" alt="{{saved_object.description}}" style="max-height: 300px; max-weight: 300px" >
+{% endif %}
+
 </body>
 </html>
