@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Pagina de archivos</h1>
+
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" >Upload</button>
+
+</form>
+
+{% if saved_object %}
+<h2> Se guardó tu archivo en : {{saved_object.file.url}}</h2>
+<h3>Descipción del archivo: {{saved_object.description}}</h3>
+
+{% endif %}
+
+</body>
+</html>
