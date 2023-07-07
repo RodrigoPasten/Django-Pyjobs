@@ -1,4 +1,5 @@
 {% load humanize %}
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -37,6 +38,7 @@
           <p class="status it">Publicado: <span>{{job.date}}</span></p>
 
           <p class="budget it">Sueldo ofertado: <span>$ {{job.salary | intword }}</span></p>
+
           <p class="status it">fecha de expiración: <span>{{job.expiry}}</span></p>
           <div class="desc">
             <p class="details">

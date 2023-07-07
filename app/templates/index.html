@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 {% load static %}
 {% load humanize %}
-<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -44,7 +45,7 @@
               </div>
               <div class="budget item">
                 <span class="material-icons"> attach_money </span>
-                <p>{{job.salary| intword}}</p>
+                <p>{{job.salary| intcomma }}</p>
               </div>
               <div class="time item">
                 <span class="material-icons"> schedule </span>
@@ -66,6 +67,6 @@
         {% endfor %}
       </div>
     </section>
-    <script src="{% static 'app/app.js' %}"></script>
+    <script src="{% static 'app.js' %}"></script>
   </body>
 </html>
