@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,11 +44,15 @@
               </div>
               <div class="budget item">
                 <span class="material-icons"> attach_money </span>
-                <p>{{job.salary}}</p>
+                <p>{{job.salary| intword}}</p>
               </div>
               <div class="time item">
                 <span class="material-icons"> schedule </span>
-                <p>Full Time</p>
+                <p>Publicado: {{job.date}}</p>
+              </div>
+                 <div class="time item">
+                <span class="material-icons"> schedule </span>
+                <p>Vence: {{job.expiry}}</p>
               </div>
             </div>
           </div>

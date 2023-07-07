@@ -1,5 +1,5 @@
- {% load humanize %}
- {% load static %}
+{% load humanize %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -33,9 +33,11 @@
           <h1 class="jobtitle">
               {{job.title}}
           </h1>
-          <p class="location it">Location: <span>{{job.location.city}}</span></p>
-          <p class="status it">Type: <span>Full time</span></p>
-          <p class="budget it">Salary: <span>{{job.salary}}</span></p>
+          <p class="location it">Lugar: <span>{{job.location.city}}</span></p>
+          <p class="status it">Publicado: <span>{{job.date}}</span></p>
+
+          <p class="budget it">Sueldo ofertado: <span>$ {{job.salary | intword }}</span></p>
+          <p class="status it">fecha de expiración: <span>{{job.expiry}}</span></p>
           <div class="desc">
             <p class="details">
              {{job.description}}
